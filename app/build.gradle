@@ -1,0 +1,76 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+
+android {
+    compileSdkVersion targetSdk
+    buildToolsVersion buildTools
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    defaultConfig {
+        applicationId "mezzari.torres.lucas.motion_layout_test"
+        minSdkVersion targetMinSdk
+        targetSdkVersion targetSdk
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    // Default
+    implementation libraries.kotlin_stdlib
+    implementation libraries.kotlin_core
+
+    // Android
+    implementation libraries.app_compat
+    implementation libraries.material
+    implementation libraries.constraint
+
+    // Navigation
+    implementation libraries.navigation_fragment
+    implementation libraries.navigation_ui
+
+    //Coroutines
+    implementation libraries.coroutines
+    testImplementation libraries.coroutines_test
+
+    // Tests
+    testImplementation libraries.junit_default
+    androidTestImplementation libraries.junit_android
+    androidTestImplementation libraries.espresso_core
+
+    //Retrofit
+    implementation libraries.retrofit
+    implementation libraries.retrofit_gson
+
+    //Koin
+    implementation libraries.koin_scope
+    implementation libraries.koin_view_model
+    implementation libraries.koin_fragment
+    testImplementation libraries.koin_test
+
+    // My Libraries
+    implementation libraries.kotlin_network
+}
