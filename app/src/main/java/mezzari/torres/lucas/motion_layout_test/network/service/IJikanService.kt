@@ -1,6 +1,8 @@
 package mezzari.torres.lucas.motion_layout_test.network.service
 
 import kotlinx.coroutines.flow.Flow
+import mezzari.torres.lucas.motion_layout_test.model.Anime
+import mezzari.torres.lucas.motion_layout_test.model.network.ResponseWrapper
 import mezzari.torres.lucas.motion_layout_test.network.config.Resource
 
 /**
@@ -8,5 +10,5 @@ import mezzari.torres.lucas.motion_layout_test.network.config.Resource
  * @since 09/06/2021
  */
 interface IJikanService {
-    fun getService(year: Int, season: String): Flow<Resource<Any?>>
+    fun getService(year: Int, season: String): Flow<Resource<ResponseWrapper<List<Anime>>>>
 }

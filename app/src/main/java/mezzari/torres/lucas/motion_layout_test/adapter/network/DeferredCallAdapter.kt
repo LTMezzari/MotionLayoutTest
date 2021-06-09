@@ -1,4 +1,4 @@
-package mezzari.torres.lucas.motion_layout_test.network.adapter
+package mezzari.torres.lucas.motion_layout_test.adapter.network
 
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.Deferred
@@ -22,9 +22,7 @@ class DeferredCallAdapter<R>(
 
         val callback = object: Callback<R> {
             override fun onResponse(call: Call<R>, response: retrofit2.Response<R>) {
-                if (response.isSuccessful) {
-                    deferred.complete(Response.create(response))
-                }
+                deferred.complete(Response.create(response))
             }
 
             override fun onFailure(call: Call<R>, t: Throwable) {

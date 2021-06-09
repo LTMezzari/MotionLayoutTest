@@ -1,4 +1,4 @@
-package mezzari.torres.lucas.motion_layout_test.network.adapter
+package mezzari.torres.lucas.motion_layout_test.adapter.network
 
 import kotlinx.coroutines.Deferred
 import mezzari.torres.lucas.motion_layout_test.network.config.Response

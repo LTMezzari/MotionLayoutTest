@@ -1,6 +1,6 @@
 package mezzari.torres.lucas.motion_layout_test.network.module
 
-import mezzari.torres.lucas.motion_layout_test.network.adapter.RetrofitCallAdapterFactory
+import mezzari.torres.lucas.motion_layout_test.adapter.network.RetrofitCallAdapterFactory
 import mezzari.torres.lucas.network.source.Network
 import retrofit2.Retrofit
 

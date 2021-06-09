@@ -52,7 +52,7 @@ dependencies {
     implementation libraries.navigation_fragment
     implementation libraries.navigation_ui
 
-    //Coroutines
+    // Coroutines
     implementation libraries.coroutines
     testImplementation libraries.coroutines_test
 
@@ -61,11 +61,14 @@ dependencies {
     androidTestImplementation libraries.junit_android
     androidTestImplementation libraries.espresso_core
 
-    //Retrofit
+    //Glide
+    implementation libraries.glide
+
+    // Retrofit
     implementation libraries.retrofit
     implementation libraries.retrofit_gson
 
-    //Koin
+    // Koin
     implementation libraries.koin_scope
     implementation libraries.koin_view_model
     implementation libraries.koin_fragment

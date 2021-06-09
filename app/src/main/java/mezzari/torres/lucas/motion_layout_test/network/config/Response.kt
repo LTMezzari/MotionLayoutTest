@@ -11,15 +11,15 @@ sealed class Response<T> {
         }
 
         fun <T> create(response: retrofit2.Response<T>): Response<T> {
+            val body = response.body()
             if (response.isSuccessful) {
-                val body = response.body()
                 return Success(body)
             }
             val message = response.message()
-            return Failure(message)
+            return Failure(message, body)
         }
     }
 
     data class Success<T>(val data: T?): Response<T>()
-    data class Failure<T>(val error: String?): Response<T>()
+    data class Failure<T>(val error: String?, val data: T? = null): Response<T>()
 }
