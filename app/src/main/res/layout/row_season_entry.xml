@@ -9,26 +9,54 @@
         android:id="@+id/tvTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintEnd_toStartOf="@id/tvDate"
+        android:maxLines="2"
+        android:ellipsize="end"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="To Your Eternity" />
 
     <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivCover"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintBottom_toTopOf="@id/tvDate"
+        tools:text="@tools:sample/lorem/random" />
+
+    <TextView
+        android:id="@+id/tvLicensors"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintVertical_bias="1"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@id/ivCover"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintBottom_toBottomOf="@id/ivCover"
+        tools:text="Funimation" />
+
+    <TextView
         android:id="@+id/tvDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:layout_constraintVertical_bias="1"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toEndOf="@id/ivCover"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintBottom_toBottomOf="@id/ivCover"
         tools:text="14/04/2021" />
 
     <ImageView
         android:id="@+id/ivCover"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvTitle"
         tools:src="@mipmap/ic_launcher" />

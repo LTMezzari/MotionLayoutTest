@@ -1,9 +1,10 @@
-package mezzari.torres.lucas.motion_layout_test.ui
+package mezzari.torres.lucas.motion_layout_test.ui.splash
 
 import android.os.Bundle
 import android.view.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.motion.widget.MotionLayout
+import mezzari.torres.lucas.motion_layout_test.R
 import mezzari.torres.lucas.motion_layout_test.databinding.FragmentSplashBinding
 import mezzari.torres.lucas.motion_layout_test.generic.BaseFragment
 
@@ -15,17 +16,16 @@ class SplashFragment: BaseFragment() {
 
     private lateinit var binding: FragmentSplashBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        val compatActivity = activity as? AppCompatActivity
-        compatActivity?.supportActionBar?.hide()
+    init {
+        hasToolbarUpdate = true
+        shouldShowActionBar = false
     }
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentSplashBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -39,16 +39,10 @@ class SplashFragment: BaseFragment() {
             override fun onTransitionChange(p0: MotionLayout?, p1: Int, p2: Int, p3: Float) {}
 
             override fun onTransitionCompleted(p0: MotionLayout?, p1: Int) {
-
+                navController.navigate(R.id.action_splashFragment_to_newsFragment)
             }
 
             override fun onTransitionTrigger(p0: MotionLayout?, p1: Int, p2: Boolean, p3: Float) {}
         })
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        val compatActivity = activity as? AppCompatActivity
-        compatActivity?.supportActionBar?.show()
     }
 }

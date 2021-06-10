@@ -17,7 +17,7 @@ import retrofit2.http.Path
 @Route("https://api.jikan.moe/v3/")
 interface IJikanAPI {
     @GET("season/{year}/{season}")
-    suspend fun getSeason(
+    fun getSeason(
         @Path("year") year: Int,
         @Path("season") season: String
     ): Deferred<Response<ResponseWrapper<List<Anime>>>>
